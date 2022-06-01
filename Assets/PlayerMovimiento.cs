@@ -35,4 +35,19 @@ public class PlayerMovimiento : MonoBehaviour
         {
             transform.Translate(0, 0, -movementSpeed);
         }
+
+        if (Input.GetKeyDown(KeyCode.Space) && hasJump > 0)
+        {
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            hasJump--;
+        }
     }
+
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "ground")
+        {
+            hasJump = maxJumps;
+        }
+    }
+}
