@@ -39,7 +39,7 @@ public class PlayerMovimiento : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && hasJump > 0)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            hasJump--;
+            hasJump --;
         }
     }
 
