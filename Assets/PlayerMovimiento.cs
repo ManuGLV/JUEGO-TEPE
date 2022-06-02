@@ -43,11 +43,4 @@ public class PlayerMovimiento : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision col)
-    {
-        if (col.gameObject.tag == "ground")
-        {
-            hasJump = maxJumps;
-        }
-    }
 }
