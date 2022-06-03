@@ -275,6 +275,7 @@ GameObject:
   - component: {fileID: 1626615763}
   - component: {fileID: 1626615762}
   - component: {fileID: 1626615761}
+  - component: {fileID: 1626615765}
   m_Layer: 0
   m_Name: Obstaculo
   m_TagString: Untagged
@@ -347,13 +348,26 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1626615760}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.36, y: 1.8985827, z: 12.198}
-  m_LocalScale: {x: 0.99999976, y: 1, z: 2.8558624}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9.360016, y: 1.8985827, z: 12.198}
+  m_LocalScale: {x: 1, y: 1, z: 2.8558624}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1626615765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626615760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52010793706f7f34a913dbd313ecc104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Obi: 0.1
 --- !u!1 &2022465313
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,6 +505,7 @@ GameObject:
   - component: {fileID: 2101947492}
   - component: {fileID: 2101947491}
   - component: {fileID: 2101947490}
+  - component: {fileID: 2101947494}
   m_Layer: 0
   m_Name: Pista
   m_TagString: Untagged
@@ -571,3 +586,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2101947494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101947489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24a445fd2b6c7164cb917e070be8940e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Movi: 0.1
