@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovimiento : MonoBehaviour
 {
@@ -8,16 +9,17 @@ public class PlayerMovimiento : MonoBehaviour
     public float movementSpeed;
     public float rotationSpeed;
     public float jumpForce;
-    public int maxJumps;
+   
 
-    int hasJump;
+    bool hasJump;
     Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        hasJump = maxJumps;
+       
         rb = GetComponent<Rigidbody>();
+        hasJump = true;
     }
 
     // Update is called once per frame
@@ -36,11 +38,21 @@ public class PlayerMovimiento : MonoBehaviour
             transform.Translate(0, 0, -movementSpeed);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && hasJump > 0)
+        if (Input.GetKeyDown(KeyCode.Space) && hasJump == true)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            hasJump --;
+            hasJump = false;
         }
     }
-
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.name == "Obstaculo")
+        {
+            Destroy(gameObject);
+        }
+        if (col.gameObject.name == "Pista")
+        {
+            hasJump = true;
+        }
+    }
 }
