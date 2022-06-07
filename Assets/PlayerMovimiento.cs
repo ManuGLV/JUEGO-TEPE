@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class PlayerMovimiento : MonoBehaviour
 {
-
     public float movementSpeed;
     public float rotationSpeed;
     public float jumpForce;
@@ -40,6 +39,7 @@ public class PlayerMovimiento : MonoBehaviour
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             hasJump = false;
         }
+
     }
     void OnCollisionEnter(Collision col)
     {
