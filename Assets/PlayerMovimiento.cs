@@ -8,6 +8,7 @@ public class PlayerMovimiento : MonoBehaviour
     public float movementSpeed;
     public float rotationSpeed;
     public float jumpForce;
+    
    
 
     bool hasJump;
@@ -45,7 +46,7 @@ public class PlayerMovimiento : MonoBehaviour
     {
         if (col.gameObject.name == "Obstaculo")
         {
-            Destroy(gameObject);
+            transform.position = new Vector3(14, 2, 15);
         }
         if (col.gameObject.name == "Pista")
         {

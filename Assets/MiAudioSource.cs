@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AudioSource : MonoBehaviour { 
+public class MiAudioSource : MonoBehaviour { 
 
     public AudioClip SUIsound;
     AudioSource fuenteaudio;
