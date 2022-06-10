@@ -46,7 +46,7 @@ public class PlayerMovimiento : MonoBehaviour
     {
         if (col.gameObject.name == "Obstaculo")
         {
-            transform.position = new Vector3(14, 2, 15);
+            Destroy(gameObject);
         }
         if (col.gameObject.name == "Pista")
         {
