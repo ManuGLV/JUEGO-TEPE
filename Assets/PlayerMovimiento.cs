@@ -9,6 +9,7 @@ public class PlayerMovimiento : MonoBehaviour
     public float rotationSpeed;
     public float jumpForce;
     
+    public GameObject panel;
    
 
     bool hasJump;
@@ -51,6 +52,10 @@ public class PlayerMovimiento : MonoBehaviour
         if (col.gameObject.name == "Pista")
         {
             hasJump = true;
+        }
+        if (col.gameObject.name == "WIN")
+        {
+            panel.SetActive(true);
         }
     }
 }
