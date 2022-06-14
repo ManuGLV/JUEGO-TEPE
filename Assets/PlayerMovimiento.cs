@@ -8,9 +8,11 @@ public class PlayerMovimiento : MonoBehaviour
     public float movementSpeed;
     public float rotationSpeed;
     public float jumpForce;
-    
+
+    public GameObject pista;
+    public Vector3 posiconInicial;
     public GameObject panel;
-   
+    
 
     bool hasJump;
     Rigidbody rb;
@@ -18,7 +20,7 @@ public class PlayerMovimiento : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+        posiconInicial = pista.transform.position;
         rb = GetComponent<Rigidbody>();
         hasJump = true;
     }
@@ -47,7 +49,9 @@ public class PlayerMovimiento : MonoBehaviour
     {
         if (col.gameObject.name == "Obstaculo")
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            pista.transform.position = posiconInicial;
+
         }
         if (col.gameObject.name == "Pista")
         {
