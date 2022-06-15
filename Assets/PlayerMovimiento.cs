@@ -12,7 +12,9 @@ public class PlayerMovimiento : MonoBehaviour
     public GameObject pista;
     public Vector3 posiconInicial;
     public GameObject panel;
-    
+
+    public GameObject cubo;
+    GameObject clon;
 
     bool hasJump;
     Rigidbody rb;
@@ -60,6 +62,12 @@ public class PlayerMovimiento : MonoBehaviour
         if (col.gameObject.name == "WIN")
         {
             panel.SetActive(true);
+            for(int i = 0; i < 100; i++)
+            {
+                clon = Instantiate(cubo);
+                Destroy(clon, 5);
+            }
         }
+        
     }
 }

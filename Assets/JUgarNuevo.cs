@@ -20,5 +20,6 @@ public class JUgarNuevo : MonoBehaviour
     public void reseteear()
     {
         panel.SetActive(false);
+
     }
 }
