@@ -21,10 +21,14 @@ public class TIMER : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float time = Time.time;
-        txt_Timetime.text = time.ToString();
+        if (isCounting == true)
+        {
+            float time = Time.time;
+            txt_Timetime.text = time.ToString();
 
-        txt_TimeFloored.text = Mathf.Floor(time).ToString();
+            txt_TimeFloored.text = Mathf.Floor(time).ToString();
+        }
+       
     }
 
     void OnCollisionEnter(Collision col)
