@@ -5,11 +5,16 @@ using UnityEngine.UI;
 
 public class PlayerMovimiento : MonoBehaviour
 {
-
     public float movementSpeed;
     public float rotationSpeed;
     public float jumpForce;
-   
+
+    public GameObject pista;
+    public Vector3 posiconInicial;
+    public GameObject panel;
+
+    public GameObject cubo;
+    GameObject clon;
 
     bool hasJump;
     Rigidbody rb;
@@ -17,7 +22,7 @@ public class PlayerMovimiento : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+        posiconInicial = pista.transform.position;
         rb = GetComponent<Rigidbody>();
         hasJump = true;
     }
@@ -40,16 +45,29 @@ public class PlayerMovimiento : MonoBehaviour
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             hasJump = false;
         }
+
     }
     void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.name == "Obstaculo")
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            pista.transform.position = posiconInicial;
+
         }
         if (col.gameObject.name == "Pista")
         {
             hasJump = true;
         }
+        if (col.gameObject.name == "WIN")
+        {
+            panel.SetActive(true);
+            for(int i = 0; i < 100; i++)
+            {
+                clon = Instantiate(cubo);
+                Destroy(clon, 5);
+            }
+        }
+        
     }
 }
